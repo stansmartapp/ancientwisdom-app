@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Wisdom - Fortune Teller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Splash Screen -->
+        <div id="splashScreen" class="screen active">
+            <div class="crystal-ball">
+                <div class="crystal-sphere">
+                    <div class="crystal-glow"></div>
+                    <div class="crystal-reflection"></div>
+                </div>
+                <div class="crystal-base"></div>
+            </div>
+            <h1 class="app-title">Ancient Wisdom</h1>
+            <p class="app-subtitle">Discover the secrets of your destiny</p>
+            <button id="startBtn" class="start-btn">Begin Your Journey</button>
+        </div>
+
+        <!-- Input Screen -->
+        <div id="inputScreen" class="screen">
+            <div class="header">
+                <h2>Tell Us About Yourself</h2>
+                <p>Upload your photo and birth date for a personalized reading</p>
+            </div>
+            
+            <div class="input-form">
+                <div class="form-group">
+                    <label for="birthDate">Date of Birth</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="photoUpload">Upload Your Photo</label>
+                    <div class="photo-upload-area" id="photoUploadArea">
+                        <input type="file" id="photoUpload" accept="image/*" hidden>
+                        <div class="upload-placeholder">
+                            <div class="upload-icon">📷</div>
+                            <p>Click to upload your photo</p>
+                        </div>
+                        <img id="previewImage" class="preview-image" style="display: none;">
+                    </div>
+                </div>
+                
+                <button id="analyzeBtn" class="analyze-btn" disabled>Get My Character Reading</button>
+            </div>
+        </div>
+
+        <!-- Character Result Screen -->
+        <div id="characterScreen" class="screen">
+            <div class="header">
+                <h2>Your Character Analysis</h2>
+                <p>Based on your photo and birth date</p>
+            </div>
+            
+            <div class="result-content">
+                <div class="character-result" id="characterResult">
+                    <div class="loading-spinner" id="loadingSpinner">
+                        <div class="spinner"></div>
+                        <p>Analyzing your character...</p>
+                    </div>
+                </div>
+                
+                <div class="premium-options" id="premiumOptions" style="display: none;">
+                    <h3>Unlock Premium Readings</h3>
+                    <div class="premium-grid">
+                        <div class="premium-card" data-category="love">
+                            <div class="premium-icon">💕</div>
+                            <h4>Love Fortune</h4>
+                            <p>Discover insights about your romantic life</p>
+                            <span class="price">$2.99</span>
+                        </div>
+                        <div class="premium-card" data-category="health">
+                            <div class="premium-icon">🌿</div>
+                            <h4>Health Fortune</h4>
+                            <p>Get guidance on your wellbeing</p>
+                            <span class="price">$2.99</span>
+                        </div>
+                        <div class="premium-card" data-category="wealth">
+                            <div class="premium-icon">💰</div>
+                            <h4>Wealth Fortune</h4>
+                            <p>Uncover your financial future</p>
+                            <span class="price">$2.99</span>
+                        </div>
+                        <div class="premium-card" data-category="career">
+                            <div class="premium-icon">🚀</div>
+                            <h4>Career Fortune</h4>
+                            <p>Explore your professional path</p>
+                            <span class="price">$2.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="newReadingBtn" class="new-reading-btn">Start New Reading</button>
+            </div>
+        </div>
+
+        <!-- Premium Screen -->
+        <div id="premiumScreen" class="screen">
+            <div class="header">
+                <h2 id="premiumTitle">Premium Reading</h2>
+                <p id="premiumDescription">Unlock detailed insights about your future</p>
+            </div>
+            
+            <div class="premium-content">
+                <div class="premium-info">
+                    <div class="premium-icon-large" id="premiumIconLarge">🔮</div>
+                    <div class="price-info">
+                        <span class="price-amount">$2.99</span>
+                        <span class="price-description">One-time purchase</span>
+                    </div>
+                </div>
+                
+                <div class="premium-result" id="premiumResult" style="display: none;">
+                    <div class="loading-spinner" id="premiumLoadingSpinner">
+                        <div class="spinner"></div>
+                        <p>Consulting the cosmic forces...</p>
+                    </div>
+                </div>
+                
+                <div class="premium-actions">
+                    <button id="purchaseBtn" class="purchase-btn">Purchase Reading</button>
+                    <button id="backToCharacterBtn" class="back-btn">Back to Character Analysis</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
